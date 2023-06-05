@@ -1,0 +1,73 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Layout";
+
+}
+<div class="container mt-3">
+    <div class="row justify-content-md-center">
+        <div class="col-md-10">
+            <h2>用戶移除</h2>
+            <div class="alert alert-info">
+                請填寫下面資訊來移除用戶
+            </div>
+            <p></p>
+            <form asp-area="Auth" asp-controller="Auth001" asp-action="Auth001Delect" id="myForm"
+                  method="post">
+
+                <div class="form-group">
+                    <span>*</span>
+                    <label class="control-label" for="UserName">移除目標帳號名 :</label>
+                    <input class="form-control" id="UserName" name="UserName" value="@ViewBag.UserName" required />
+                </div>
+
+                <br />
+                <div class="form-group text-end">
+                    <input type="submit" value="Send" class="btn btn-info" />
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<script src="~/js/jquery-3.7.0.min.js"></script>
+@if (ViewBag.UserName != "")
+{
+    <script>
+        let userName = '@ViewBag.UserName';
+        $(document).ready(function() {
+            Swal.fire(
+                '錯誤!',
+                '用戶名稱' + userName + '不存在! 請再做確認。',
+                'error'
+            )
+        });
+    </script>
+}
+<script>
+    $(document).ready(function() {
+        $('#myForm').submit(function(event) {
+            event.preventDefault(); // 阻止表單預設提交行為
+            Swal.fire({
+                title: '發送請求中',
+                html: '請耐心等候...',
+                timer: 1000,
+                didOpen: () => {
+                    Swal.showLoading();
+                    const b = Swal.getHtmlContainer().querySelector('b');
+                    timerInterval = setInterval(() => {
+                        b.textContent = Swal.getTimerLeft();
+                    }, 100);
+                },
+                willClose: () => {
+                    clearInterval(timerInterval);
+                    // 在此處執行您想要的操作
+                    // 將提取的行為代碼放在這裡
+                    $('#myForm').unbind('submit').submit(); // 延遲3秒後重新提交表單
+                }
+            })
+        });
+    });
+</script>

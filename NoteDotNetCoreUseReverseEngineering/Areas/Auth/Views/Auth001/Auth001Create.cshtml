@@ -1,0 +1,142 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model NoteDotNetCoreUseReverseEngineering.Models.TQLDB.Tables.Auth001;
+@{
+    Layout = "_Layout";
+}
+<style>
+    .form-group {
+        margin: 16px;
+    }
+</style>
+
+<div class="container mt-3">
+    <div class="row justify-content-md-center">
+        <div class="col-md-10">
+            <h2>用戶添加</h2>
+            <p>請填寫下面資訊來添加用戶</p>
+            <form asp-area="Auth" asp-controller="Auth001" asp-action="Auth001Create"
+                  method="post">
+
+                <div class="form-group">
+                    <span>*</span>
+                    <label asp-for="Username" class="control-label"></label>
+                    <input asp-for="Username" class="form-control" />
+                    <span asp-validation-for="Username" data-valmsg-replace="false" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <span>*</span>
+                    <label asp-for="Password" class="control-label"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" data-valmsg-replace="false" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <span>*</span>
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" data-valmsg-replace="false" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <span>*</span>
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" data-valmsg-replace="false" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <span>*</span>
+                    <label asp-for="RoleRange" class="control-label"></label>
+                    <input asp-for="RoleRange" class="form-control" />
+                    <span asp-validation-for="RoleRange" data-valmsg-replace="false" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <span>*</span>
+                    <label asp-for="SchoolCtrl001Id" class="control-label"></label>
+                    <input type="text" asp-for="SchoolCtrl001Id" class="form-control" />
+                    <span asp-validation-for="SchoolCtrl001Id" data-valmsg-replace="false" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <span>*</span>
+                    <label asp-for="Office" class="control-label"></label>
+                    <input asp-for="Office" class="form-control" />
+                    <span asp-validation-for="Office" data-valmsg-replace="false" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <span>*</span>
+                    <label asp-for="Phone" class="control-label"></label>
+                    <input asp-for="Phone" class="form-control" />
+                    <span asp-validation-for="Phone" data-valmsg-replace="false" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <span>*</span>
+                    <label asp-for="Cellphone" class="control-label"></label>
+                    <input asp-for="Cellphone" class="form-control" />
+                    <span asp-validation-for="Cellphone" data-valmsg-replace="false" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <span>*</span>
+                    <label asp-for="Fax" class="control-label"></label>
+                    <input asp-for="Fax" class="form-control" />
+                    <span asp-validation-for="Fax" data-valmsg-replace="false" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <span>*</span>
+                    <label asp-for="State006Id" class="control-label"></label>
+                    <select class="form-select" aria-label="Default select example" name="State006Id" id="State006Id" required>
+                        
+                        <option value="1" selected>是</option>
+                        <option value="0">否</option>
+                    </select>
+                    <span asp-validation-for="State006Id" data-valmsg-replace="false" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <span>*</span>
+                    <label asp-for="CreateTime" class="control-label"></label>
+                    <input asp-for="CreateTime" class="form-control" />
+                    <span asp-validation-for="CreateTime" data-valmsg-replace="false" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <span>*</span>
+                    <label for="IsChangeInfo" class="control-label">是否修改過</label>
+                    <select class="form-select" aria-label="Default select example" name="IsChangeInfo" id="IsChangeInfo" required>
+                        
+                        <option value="true" selected>是</option>
+                        <option value="false">否</option>
+                    </select>
+                    <span asp-validation-for="IsChangeInfo" data-valmsg-replace="false" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <span>*</span>
+                    <label asp-for="DepartmentName" class="control-label"></label>
+                    <input asp-for="DepartmentName" class="form-control" />
+                    <span asp-validation-for="DepartmentName" data-valmsg-replace="false" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <span>*</span>
+                    <label for="IsChangePassword" class="control-label" asp-for="IsChangePassword"></label>
+                    <select class="form-select" aria-label="Default select example" name="IsChangePassword" id="IsChangePassword" required>
+                        
+                        <option value="true" selected>是</option>
+                        <option value="false">否</option>
+                    </select>
+                    <span asp-validation-for="IsChangePassword" data-valmsg-replace="false" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <span>*</span>
+                    <label asp-for="IsEncrypted" class="control-label">是否加密</label>
+                    <select class="form-select" aria-label="Default select example" name="IsEncrypted" id="IsEncrypted" required>
+                        
+                        <option value="true" selected>是</option>
+                        <option value="false">否</option>
+                    </select>
+                </div>
+
+                <br />
+                <div class="form-group">
+                    <input type="submit" value="Send" class="btn btn-info" />
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
