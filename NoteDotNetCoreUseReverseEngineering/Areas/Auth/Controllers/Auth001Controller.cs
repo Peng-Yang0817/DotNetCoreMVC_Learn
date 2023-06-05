@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NoteDotNetCoreUseReverseEngineering.Models.TQLDB.Tables;
+
+// Update資料會用到的包
 using Microsoft.EntityFrameworkCore;
 
 
