@@ -15,6 +15,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Codding\DotNetCoreLearnAndTest\NoteDotNetCoreUseReverseEngineering\NoteDotNetCoreUseReverseEngineering
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Codding/DotNetCoreLearnAndTest/NoteDotNetCoreUseReverseEngineering/NoteDotNetCoreUseReverseEngineering/Areas/Auth/Views/Auth001/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXV0aFxWaWV3c1xBdXRoMDAxXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Codding/DotNetCoreLearnAndTest/NoteDotNetCoreUseReverseEngineering/NoteDotNetCoreUseReverseEngineering/Areas/Auth/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXV0aFxWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Codding/DotNetCoreLearnAndTest/NoteDotNetCoreUseReverseEngineering/NoteDotNetCoreUseReverseEngineering/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteDotNetCoreUseReverseEngineering", "NoteDotNetCoreUseReverseEngineering\NoteDotNetCoreUseReverseEngineering.csproj", "{04346891-CB73-40A5-8679-36DC8E68CDD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoteDotNetCoreUseReverseEngineering", "NoteDotNetCoreUseReverseEngineering\NoteDotNetCoreUseReverseEngineering.csproj", "{04346891-CB73-40A5-8679-36DC8E68CDD0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
