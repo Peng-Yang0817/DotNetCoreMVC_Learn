@@ -1,0 +1,53 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+@*行屬性、水平置中*@
+<div class="row justify-content-center">
+    @*欄12標準下佔5、margin-top:5px*@
+    <div class="col-5 mt-5">
+        @*創建card屬性的區塊，login-logout-card是我們等等要自定義的css*@
+        <div class="card login-Register-card">
+            @*卡片標題*@
+            <div class="card-header">
+                @*  nav代表導航元素、
+                nav-tbs表示應該呈現為標籤式的樣式、
+                card-header-tabs指示導航元素應該作為卡片元素的頂部標籤頁*@
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Sys/Sys/RenderBody_LoginPage">LogIn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Sys/Sys/RenderBody_RegistrationPage">Register</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="row justify-content-center">
+                    @*margin-y 添加y軸的上下間距*@
+                    <div class="col-12 my-4">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+@section Scripts{
+    @await RenderSectionAsync("Scripts",required:false)
+    <script>
+        $(function() {
+            const currentPage = location.pathname;
+            $('.nav-tabs li a').each(function() {
+                const $this = $(this);
+                if (currentPage.toLocaleLowerCase().indexOf($this.attr('href').toLowerCase()) != -1) {
+                    $this.addClass('active');
+                }
+            })
+        })
+    </script>
+}

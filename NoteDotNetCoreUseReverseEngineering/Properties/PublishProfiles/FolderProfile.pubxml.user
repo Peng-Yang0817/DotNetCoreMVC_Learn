@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Codding\DotNetCoreLearnAndTest\CoreProjectDeployment</_PublishTargetUrl>
+    <History>True|2023-06-10T08:21:36.4689580Z;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="TQLDBConnection">
+      <Value>Data Source=192.168.0.80%3bInitial Catalog=TQLDB%3bUser ID=sa%3bPassword=0961336515%3bTrustServerCertificate=true</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="NoteDotNetCoreUseReverseEngineering.Models.TQLDB.Tables.TQLDBTablesContext">
+      <Value>Data Source=192.168.0.80%3bInitial Catalog=TQLDB%3bUser ID=sa%3bPassword=0961336515%3bTrustServerCertificate=true</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

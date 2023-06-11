@@ -15,7 +15,17 @@ builder.Services.AddDbContext<TQLDBViewsContext>(options =>
 // 添加控制器與視圖的服務
 builder.Services.AddControllersWithViews();
 
+// 添加Session的功能
+builder.Services.AddDistributedMemoryCache(); /*IServices 集合併在 builder.Build() 函數之前添加以下代碼行：*/
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(20); /*設定Session Timeout time*/
+});
+
+
 var app = builder.Build();
+
+app.UseSession();
 
 // 設定 HTTP 請求管道
 if (!app.Environment.IsDevelopment())

@@ -23,6 +23,7 @@ namespace NoteDotNetCoreUseReverseEngineering.Controllers
             this.viewDb = viewDb;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             // 使用 tableDb 從資料庫中取得 Auth001s 資料表的所有記錄，轉換為 List<Auth001>

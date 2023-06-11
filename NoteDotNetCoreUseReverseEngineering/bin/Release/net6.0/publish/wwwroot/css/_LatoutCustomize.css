@@ -1,0 +1,25 @@
+﻿.dropdown-menu li:hover .sub-menu {
+    visibility: visible;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+#AuthEdit:disabled {
+    color: black;
+    opacity: 0.9;
+    padding: 8;
+}
+
+/*針對介面的navbar-brand做設定，便利RWD*/
+@media only screen and (max-width:600px) {
+    .navbar-brand {
+        padding-left: 0;
+    }
+}
+@media only screen and (min-width:600px) {
+    .navbar-brand {
+        padding-left: 10vh;
+    }
+}
