@@ -22,64 +22,22 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    @if (Context.Session.GetString("UserName") != null)
+                    @if (Context.Session.GetString("Auth001Id") != null)
                     {
                         <ul class="navbar-nav flex-grow-1">
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <button id="AuthEdit2" class="nav-link dropdown-toggle btn btn-defort" data-bs-toggle="dropdown" disabled>UserPage</button>
+                                <button id="AuthEdit2" class="nav-link dropdown-toggle btn btn-defort" data-bs-toggle="dropdown" disabled>用戶</button>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a class="nav-link text-dark" asp-area="Sys" asp-controller="Sys" asp-action="RenderBody_LoginPage">LoginPage</a>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link text-dark" asp-area="Sys" asp-controller="Sys" asp-action="RenderBody_RegistrationPage">RegistrationPage</a>
+                                        <a class="nav-link text-dark" asp-area="Sys" asp-controller="Sys" asp-action="UserLogout">登出</a>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
                     }
-                    else
-                    {
-                        <ul class="navbar-nav flex-grow-1">
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <button id="AuthEdit1" class="nav-link dropdown-toggle btn btn-defort" data-bs-toggle="dropdown" disabled>AuthEdit</button>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="nav-link text-dark" asp-area="Auth" asp-controller="Auth001" asp-action="Auth001Create">Create</a>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link text-dark" asp-area="Auth" asp-controller="Auth001" asp-action="Auth001Delect">Delect</a>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link text-dark" asp-area="Auth" asp-controller="Auth001" asp-action="Auth001UpdatePassword">Update</a>
-                                    </li>
-                                    @*<li><a class="dropdown-item" href="#">Link 2</a></li>
-                                <li><a class="dropdown-item" href="#">Link 3</a></li>*@
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <button id="AuthEdit2" class="nav-link dropdown-toggle btn btn-defort" data-bs-toggle="dropdown" disabled>UserPage</button>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="nav-link text-dark" asp-area="Sys" asp-controller="Sys" asp-action="RenderBody_LoginPage">LoginPage</a>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link text-dark" asp-area="Sys" asp-controller="Sys" asp-action="RenderBody_RegistrationPage">RegistrationPage</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    }
-
                 </div>
             </div>
         </nav>

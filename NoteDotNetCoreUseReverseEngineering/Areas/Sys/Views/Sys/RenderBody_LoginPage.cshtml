@@ -1,6 +1,7 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+@model NoteDotNetCoreUseReverseEngineering.Models.TQLDB.Tables.Auth001
 @{
     Layout = "~/Areas/Sys/Views/Sys/_Login.cshtml";
     //登入頁面
@@ -10,22 +11,37 @@
 
 <div class="container Padding_Login_RenderBody">
     <div class="row">
-        
+
         <div class="col-md-10 mx-auto mt-5">
-            <form>
+            <form asp-area="Sys" asp-controller="Sys" asp-action="RenderBody_LoginPage" method="post">
                 <div class="mb-3">
-                    <label for="username" class="form-label">UserName</label>
-                    <input type="text" class="form-control form-control-lg" id="username" placeholder="Enter Username">
+                    <label asp-for="Username" class="form-label">UserName</label>
+                    <input asp-for="Username" class="form-control form-control-lg" placeholder="Enter Username">
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control form-control-lg" id="password" placeholder="Enter Password">
+                    <input type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Enter Password">
                 </div>
                 <div class="d-flex justify-content-center Margintop_LoginOrRegPag_button">
                     <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
                 </div>
-                
+
             </form>
         </div>
     </div>
 </div>
+
+<script src="~/js/jquery-3.7.0.min.js"></script>
+@if (ViewBag.ErrorMsg != "")
+{
+    <script>
+        let ErrorMsg = '@ViewBag.ErrorMsg';
+        $(document).ready(function() {
+            Swal.fire(
+                '錯誤!',
+                ErrorMsg + '請再做確認。',
+                'error'
+            )
+        });
+    </script>
+}

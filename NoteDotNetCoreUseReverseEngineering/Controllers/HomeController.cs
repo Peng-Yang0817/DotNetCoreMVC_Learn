@@ -6,6 +6,8 @@ using System.Diagnostics;
 using NoteDotNetCoreUseReverseEngineering.Models.TQLDB.Tables;
 using NoteDotNetCoreUseReverseEngineering.Models.TQLDB.Views;
 
+using NoteDotNetCoreUseReverseEngineering.Models.MD5Service;
+
 
 namespace NoteDotNetCoreUseReverseEngineering.Controllers
 {
@@ -27,12 +29,17 @@ namespace NoteDotNetCoreUseReverseEngineering.Controllers
         public IActionResult Index()
         {
             // 使用 tableDb 從資料庫中取得 Auth001s 資料表的所有記錄，轉換為 List<Auth001>
-            List<Auth001> dataList_auth001 = tableDb.Auth001s.ToList();
+            //List<Auth001> dataList_auth001 = tableDb.Auth001s.ToList();
 
             // 使用 viewDb 從資料庫中取得 ViewOneNformCaseNameLists 檢視的所有記錄，轉換為 List<ViewOneNformCaseNameList>
-            List<ViewOneNformCaseNameList> dataList_viewOneNformCaseNameList = viewDb.ViewOneNformCaseNameLists.ToList();
+            //List<ViewOneNformCaseNameList> dataList_viewOneNformCaseNameList = viewDb.ViewOneNformCaseNameLists.ToList();
 
             // 傳遞空的模型物件到視圖
+
+            if (HttpContext.Session.GetString("Auth001Id") == null)
+            {
+                return RedirectToAction("RenderBody_LoginPage", "Sys", new { Area = "Sys" });
+            }
             return View();
         }
 
